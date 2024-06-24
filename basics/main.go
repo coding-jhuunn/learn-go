@@ -1,30 +1,26 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+	"strings"
+)
 
 func main() {
-	//specificy the range of array and its type
-	// var ages [3]int = [3]int{20, 25, 30}
-	var ages = [3]int{20, 25, 30}
+	greeting := "hello there friends!"
+	fmt.Println(strings.Contains(greeting,"hello"))
+	//fnc that return boolean if contains the string
+	fmt.Println(strings.ReplaceAll(greeting,"hello","hi"))
+	//fnc that subtitute that target strings, does not replace the origina value
+	fmt.Println(strings.ToUpper(greeting))
+	//fnc upper case
+	fmt.Println(strings.Index(greeting,"ll"))
+	//find the index of targeted string
+	fmt.Println(strings.Split(greeting,""))
 
-	names :=[4]string{"abc","dce","efg","hij"}
+	ages :=[]int{45,12,53,8,3,85,35}
+	sort.Ints(ages)
+	fmt.Println(ages)
+	fmt.Println(sort.SearchInts(ages,30))
 
-	fmt.Println(ages,len(ages))
-	fmt.Println(names,len(names))
-	//len() is a built in functiomn to check the lenght of an array
-
-	//slices (use arrays under the hood)
-	var scores = []int{100,50,60}
-	scores[2]=100;
-	scores=append(scores,22)
-	fmt.Println(scores);
-	// you can't append values to an array, it can only be applied to slices
-
-
-	//slices ranges
-
-	rangeOne := names[1:3]
-	rangeTwo := names[2:]
-	rangeThree:= names[:3]
-	fmt.Print(rangeOne,rangeTwo,rangeThree)
- }
+}
