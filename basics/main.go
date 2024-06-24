@@ -3,22 +3,28 @@ package main
 import "fmt"
 
 func main() {
-	//formating strings
-	numOne := 35
-	nameOne := "me"
-	fmt.Printf("my age is %v and my name is %v \n", numOne, nameOne)
-	fmt.Printf("my age is %q and my name is %q \n", numOne, nameOne)
-	fmt.Printf("age is of type %T",numOne)
-	//this how you specificy fomrat
+	//specificy the range of array and its type
+	// var ages [3]int = [3]int{20, 25, 30}
+	var ages = [3]int{20, 25, 30}
 
-	//%v is for concatenating variables with strings
-	//%q is for
-	//%T is for gettung the type of variable
-	//%f is for bolean , can specficy the range of boolean of decimal
+	names :=[4]string{"abc","dce","efg","hij"}
+
+	fmt.Println(ages,len(ages))
+	fmt.Println(names,len(names))
+	//len() is a built in functiomn to check the lenght of an array
+
+	//slices (use arrays under the hood)
+	var scores = []int{100,50,60}
+	scores[2]=100;
+	scores=append(scores,22)
+	fmt.Println(scores);
+	// you can't append values to an array, it can only be applied to slices
 
 
-	//Sprintf(save formatted strings)
-	// use for saving strings
-	var str = fmt.Sprintf("my age is %v and my name is %v \n", numOne, nameOne)
-	fmt.Println(str)
-}
+	//slices ranges
+
+	rangeOne := names[1:3]
+	rangeTwo := names[2:]
+	rangeThree:= names[:3]
+	fmt.Print(rangeOne,rangeTwo,rangeThree)
+ }
