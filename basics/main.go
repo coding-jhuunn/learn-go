@@ -1,16 +1,23 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
-func main() {
-	// x := 0
-	// for x <= 5 {
-	// 	fmt.Println("value of x is:",x)
-	// 	x++
-	// }
+func sayGreeting(n string) {
+	fmt.Println("hello ",n)
+}
 
-	for i := -0; i < 5; i++ {
-		fmt.Println("value of x is:", i)
-
+func cycleNames(n []string,f func(string)){
+	for _, v:=range n{
+		f(v)
 	}
 }
+func circleArea(r float64)float64{
+	return math.Pi*r *r
+}
+func main() {
+sayGreeting("hello")
+	cycleNames([]string{"aasd","asdasd","asdasdsa"},sayGreeting)
+} 
