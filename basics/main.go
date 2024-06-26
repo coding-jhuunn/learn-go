@@ -2,38 +2,33 @@ package main
 
 import "fmt"
 
+func updateName(n string) string {
+	n = "wedege"
+	return n
+	//it should have return to update the value of name var
+}
+
+func updateMap (n map[string]float64){
+	n["coffee"]=6.23
+}
+
+
 func main() {
+	name := "tifa"
 
+	// updateName(name)
+	// will not change the value of the name
+	name = updateName(name)
+	fmt.Println(name)
+
+	// key first then the value if you use map
 	menu := map[string]float64{
-		"soup":    4.99,
-		"pie":     7.99,
-		"salad":   6.99,
-		"pudding": 3.55,
+		"pie": 5.95,
+		"ice cream":3.99,
+
 	}
+
+	updateMap(menu)
 	fmt.Println(menu)
-	fmt.Println(menu["pie"])
-
-
-	//looop
-	//key then value variable
-	for k, v:=range menu{
-		fmt.Println(k,"-",v)
-	}
-
-	// ints as key type
-
-	phonebook :=map[int] string{
-		232123:"Mario",
-		123123:"asd",
-		454454:"asda",
-	}
-	fmt.Println(phonebook)
-	fmt.Println(phonebook[123123])
-
-	//update an item in a map
-
-	phonebook[123123]="bowser"
-	fmt.Println(phonebook[123123])
-
 
 }
