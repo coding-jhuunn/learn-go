@@ -2,33 +2,28 @@ package main
 
 import "fmt"
 
-func updateName(n string) string {
-	n = "wedege"
-	return n
-	//it should have return to update the value of name var
+func updateName(n *string)  {
+	// now we are passing a pointer
+	//if use * in front of argument that means accpeting in pointer
+	*n = "wedege"
+	
 }
-
-func updateMap (n map[string]float64){
-	n["coffee"]=6.23
-}
-
 
 func main() {
+
 	name := "tifa"
+	
+	
 
-	// updateName(name)
-	// will not change the value of the name
-	name = updateName(name)
+	//fmt.Println("memory address of name is: ",&name)
+	//to get the memory address of a variable
+	
+	m:=&name
+	fmt.Println("memory address",m)
+	// use * to get the value of the pointer
+	fmt.Println("value at memory address: ",*m)
 	fmt.Println(name)
-
-	// key first then the value if you use map
-	menu := map[string]float64{
-		"pie": 5.95,
-		"ice cream":3.99,
-
-	}
-
-	updateMap(menu)
-	fmt.Println(menu)
-
+	
+	updateName(m)
+	fmt.Println(name)
 }
